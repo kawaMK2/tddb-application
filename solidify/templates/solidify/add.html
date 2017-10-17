@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% load material_form %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+    <div class="left-panel">
+        <div class="card">
+            <form method="post" action="/solidify/add/" enctype="multipart/form-data">
+                <div class="card-content">
+                    <div class="card-title">
+                        New OBJ
+                    </div>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {% form form=add_form layout=add_form.layout %}{% endform %}
+                        <button type="submit" name="_submit" class="btn btn-primary btn-lg">作成</button>
+                    </form>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{#    <div class="right-panel">#}
+{#        <div class="card">#}
+{#            <div class="card-content">#}
+{##}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
+{% endblock %}

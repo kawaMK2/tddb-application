@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    <i class="fixed-action-btn">
+        <a class="btn-floating btn-large  waves-effect waves-light red z-depth-2" href="/solidify/add/">
+            <i class="large material-icons">add</i>
+        </a>
+    </i>
+
+    <div class="left-panel">
+        <div class="card">
+        <div class="card-content">
+            <table class="table table-bordered">
+                <thead>
+                <th class="">
+                    OBJ
+                </th>
+                <th class="">
+                    MTL
+                </th>
+
+                </thead>
+                <tbody>
+                {% for data in all_data %}
+                    <tr class="row1" role="row">
+                        <th>
+                            <span><a href="/media/{{ data.file }}">{{ data.get_filename }}</a></span>
+                            &nbsp;
+                        </th>
+                        <th>
+                            <span ><a href="/media/{{ data.get_mtl }}">{{ data.get_mtlname }}</a></span>
+                            &nbsp;
+                        </th>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        </div>
+    </div>
+
+
+
+
+{#    {% for data in all_data %}#}
+{#        <div class="row">#}
+{#            <div class="col-xs-6">#}
+{#                <span>{{ data.title }}</span>#}
+{#            </div>#}
+{#            <div class="col-xs-6">#}
+{#                <span><a href="/media/{{ data.file }}">{{ data.get_filename }}</a></span>#}
+{#            </div>#}
+{#        </div>#}
+{#        <hr>#}
+{#    {% endfor %}#}
+{% endblock %}

@@ -1,0 +1,7 @@
+Cython==0.27.1
+Django==1.11.6
+django-material==1.0.0
+imagekit==1.0.6
+numpy==1.13.3
+pytz==2017.2
+triangle==20170429
